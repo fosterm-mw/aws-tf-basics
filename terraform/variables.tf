@@ -36,7 +36,7 @@ variable "cluster_version" {
 
 variable "use_eks" {
   type = bool
-  default = "true"
+  default = true
 }
 
 
