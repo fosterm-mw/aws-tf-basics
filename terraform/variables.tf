@@ -24,6 +24,11 @@ variable "private_cidr" {
   default = "10.0.0.192/26"
 }
 
+variable "private_failover_cidr" {
+  type = string
+  default = "10.0.2.0/24"
+}
+
 variable "cluster_name" {
   type = string
   default = "primary-cluster"

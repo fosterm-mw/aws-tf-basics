@@ -17,3 +17,12 @@ resource "aws_subnet" "private-subnet" {
   }
 }
 
+resource "aws_subnet" "private-failover-subnet" {
+  vpc_id = aws_vpc.network.id
+  cidr_block = var.private_failover_cidr
+
+  tags = {
+    Name = "private-failover-subnet"
+  }
+}
+
