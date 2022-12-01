@@ -34,5 +34,9 @@ variable "cluster_version" {
   default = "1.22"
 }
 
+variable "use_eks" {
+  type = bool
+  default = true
+}
 
 
