@@ -1,4 +1,4 @@
 
 locals {
-  cluster_name = ""
+  vpc_id = aws_vpc.network.id
 }
