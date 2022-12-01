@@ -3,7 +3,6 @@ module "eks" {
   count = var.use_eks ? 1 : 0
 
   source = "terraform-aws-modules/eks/aws"
-  version = "18.26.6"
 
   cluster_name = var.cluster_name
   cluster_version = var.cluster_version
