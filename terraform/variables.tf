@@ -4,11 +4,6 @@ variable "vpc_name" {
   default = "ignite-vpc"
 }
 
-variable "vpc_id" {
-  type = string
-  default = aws_vpc.network.id
-}
-
 variable "region" {
   type    = string
   default = "us-west-1"

@@ -5,7 +5,7 @@ module "eks" {
   cluster_name = var.cluster_name
   cluster_version = var.cluster_version
 
-  vpc_id = var.vpc_id
+  vpc_id = local.vpc_id
   subnet_ids = module.vpc.private_subnet
 
   eks_managed_node_group_defaults = {
