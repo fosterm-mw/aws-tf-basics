@@ -7,7 +7,7 @@ module "eks" {
   cluster_version = var.cluster_version
 
   vpc_id = local.vpc_id
-  subnet_ids = module.vpc.private_subnet
+  subnet_ids = aws_subnet.private_subnet
 
   eks_managed_node_group_defaults = {
     ami_type = "AL2_x86_64"
