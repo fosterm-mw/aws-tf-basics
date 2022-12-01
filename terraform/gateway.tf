@@ -1,6 +1,6 @@
 
 resource "aws_internet_gateway" "IGW" {
-  vpc_id = aws_vpc.Main.id
+  vpc_id = aws_vpc.network.id
 }
 
 resource "aws_nat_gateway" "NATGW" {
