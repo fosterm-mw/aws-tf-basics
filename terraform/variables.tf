@@ -4,6 +4,11 @@ variable "vpc_name" {
   default = "ignite-vpc"
 }
 
+variable "vpc_id" {
+  type = string
+  default = aws_vpc.network.id
+}
+
 variable "region" {
   type    = string
   default = "us-west-1"
@@ -23,4 +28,16 @@ variable "private_cidr" {
   type = string
   default = "10.0.0.192/26"
 }
+
+variable "cluster_name" {
+  type = string
+  default = "primary-cluster"
+}
+
+variable "cluster_version" {
+  type = string
+  default = "1.22"
+}
+
+
 
