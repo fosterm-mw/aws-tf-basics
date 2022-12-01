@@ -15,6 +15,10 @@ resource "aws_route_table" "private-rt" {
     cidr_block = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.NATGW.id
   }
+  
+  depends_on {
+    resource.aws_nat_gateway.NATGW
+  }
 }
 
 resource "aws_route_table_association" "public-rt-association" {
