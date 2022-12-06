@@ -5,7 +5,8 @@ locals {
   k8s_auth_roles = {
     default_app = {
       service_accounts = [
-        "default"
+        "default",
+        "devops"
       ],
       role_id = "k9s-vault-agent",
       policies = [
