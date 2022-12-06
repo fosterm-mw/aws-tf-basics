@@ -14,10 +14,10 @@ locals {
     }
   }
 
-  garbage = {
-    for k, v in local.k8s_auth_roles : (k) => {
-      sa_acct = k["default_app"].service_accounts
-    }
+  sa_acct = {
+    for k, v in local.k8s_auth_roles : (k) => [
+      for k2, v2 in v: v2["service_accounts"]
+    ]
   }
 
 }
