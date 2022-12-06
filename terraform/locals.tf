@@ -16,7 +16,7 @@ locals {
 
   sa_acct = {
     for k, v in local.k8s_auth_roles : (k) => [
-      for k2, v2 in v: v2[service_accounts]
+      k.service_accounts
     ]
   }
 
