@@ -1,4 +1,4 @@
 
 output "test" {
-  value = locals.sa_acct
+  value = local.sa_acct
 }

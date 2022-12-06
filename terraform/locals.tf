@@ -1,6 +1,6 @@
 
 locals {
-  vpc_id = aws_vpc.network.id
+  # vpc_id = aws_vpc.network.id
 
   k8s_auth_roles = {
     default_app = {
@@ -14,7 +14,7 @@ locals {
     }
   }
 
-  sa_acct = k8s_auth_roles.default_app.service_accounts
+  sa_acct = local.k8s_auth_roles.default_app.service_accounts
 
 }
 
