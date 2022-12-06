@@ -14,7 +14,8 @@ locals {
     }
   }
 
-  sa_acct = local.k8s_auth_roles.default_app.service_accounts
+  for k, v in local.k8s_auth_roles : 
+    sa_acct = k.default_app.service_accounts
 
 }
 
