@@ -1,5 +1,5 @@
-
-resource "aws_eip" "natEIP" {
-  vpc = true
-}
-
+#
+# resource "aws_eip" "natEIP" {
+#   vpc = true
+# }
+#
