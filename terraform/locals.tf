@@ -24,9 +24,15 @@ locals {
     }
   }
 
+  # [default_app: service_accounts, default_app: role_id]
+  # [[default_app: "default", "devops"], [risk_app: "default"]]
+  # [default_app: "default", default_app: "devops", risk_app: "default"]
+
+
   sa_acct = {
-    for k, v in local.k8s_auth_roles : (k) => [
-      v.service_accounts
+    for k, v in local.k8s_auth_roles : (k) => 
+      for i in v.service_accounts : [
+        v.service_accounts[i]
     ]
   }
 
