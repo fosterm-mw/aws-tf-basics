@@ -30,11 +30,11 @@ locals {
 
 
   sa_acct = {
-    for k, v in local.k8s_auth_roles : (k) => [
-      for i in v.service_accounts : [
+    for k, v in local.k8s_auth_roles : {
+      for i in v.service_accounts : (k) => [
         v.service_accounts[i]
       ]
-    ]
+    }
   }
 
 }
