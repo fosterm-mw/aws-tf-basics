@@ -31,7 +31,7 @@ locals {
 
   sa_acct = toset(flatten([
     for app in local.k8s_auth_roles : [
-      for i in v.service_accounts : service_account
+      for service_account in v.service_accounts : service_account
     ]    
   ]))
 }
