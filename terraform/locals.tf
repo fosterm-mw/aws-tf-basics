@@ -29,14 +29,11 @@ locals {
   # [default_app: "default", default_app: "devops", risk_app: "default"]
 
 
-  sa_acct = {
-    for k, v in local.k8s_auth_roles : (k) => [
-      for i in v.service_accounts : [
-        v.service_accounts[i]
-      ]
-    ]
-  }
-
+  sa_acct = toset(flatten([
+    for app in local.k8s_auth_roles : [
+      for i in v.service_accounts : service_account
+    ]    
+  ]))
 }
 
 
