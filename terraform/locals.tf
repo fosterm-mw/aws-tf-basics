@@ -13,6 +13,15 @@ locals {
         "read-k8s-secrets"
       ]
     }
+    risk_app = {
+      service_accounts = [
+        "default"
+      ],
+      role_id = "k9s-vault-agent",
+      policies = [
+        "read-k8s-secrets"
+      ]
+    }
   }
 
   sa_acct = {
