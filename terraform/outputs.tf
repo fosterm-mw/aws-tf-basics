@@ -4,6 +4,6 @@ output "test" {
 }
 
 output "test_whole" {
-  value = local.sa_acct.default_app[*]
+  value = local.sa_acct.default_app
 }
 
